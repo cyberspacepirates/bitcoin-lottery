@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/bitcoin-lottery/favico.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/App.css" />
+    <link rel="stylesheet" href="../src/index.css" />
+    <title>Bitcoin Web Lottery - Learn about Puzzles!</title>
+    <style>
+      p {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      style="text-align: start; min-width: 320px; max-width: 800px"
+    >
+      <h1 id="what-to-do-if-i-found-the-private-key">
+        WHAT TO DO if I found the private key?
+      </h1>
+      <p>
+        If you find the private key congrats! I’m glad this stupid code I’ve
+        written changed someone’s life! But to get those bitcoins
+        <strong>IS NOT</strong> so simple.
+      </p>
+      <p>Why?</p>
+      <p>
+        Because of <strong>KANGAROOS</strong>! Yes, this
+        <strong>IS NOT</strong> a Joke
+      </p>
+      <p>
+        If you read about 160 puzzles, you will notice that some puzzles were
+        solved, those harder than the 66th puzzle.
+      </p>
+      <p>
+        It’s because they used a different algorithm for that, the Pollard
+        Kangoroo, since they have knowledge of the public key and the range of
+        the private key.
+      </p>
+      <h2 id="what-to-do">What to do then?</h2>
+      <p>
+        If you make a transaction, you will expose the public key, so BOTS
+        watching the mempool could try to race your transaction and replace it.
+      </p>
+      <p>
+        <strong
+          >It doesn’t mattter if you disable RBF(Replace By Fee), they can still
+          steal your Bitcoins</strong
+        >
+      </p>
+      <h2 id="the-harder-choice">The harder choice</h2>
+      <p>
+        There is no safest thing to do here :/ The choice with less risks is to
+        mine your own Block and add that transaction on the blockchain. The risk
+        is if there is a fork in the blockchain that happens twice a month.
+      </p>
+      <p>
+        For more information read this article on Github:
+        <a href="https://github.com/demining/Kangaroo-by-JeanLucPons"
+          >Pollard’s kangaroo for SECP256k1</a
+        >
+      </p>
+      <p>
+        <strong
+          >Thank you and God bless you! I hope you learn new things!</strong
+        >
+        Use this page not to waste time but to improve your knowledge!
+      </p>
+      <p>If you want to donate me I accept it with Love!</p>
+      <p>1LovegWGQC3hiUE2mTiWuAUfY3St9BNs9B</p>
+      <p>
+        I wrote this code with typescript with React using Vite, I used the
+        bitcoin crate from rust to generate the p2pkh addresses from the private
+        key hex.
+      </p>
+      <p>
+        And thanks to the gentleman which has been key hunting and bringing
+        information to the brazilian community about that! (I will mention him
+        here if he reaches me out)
+      </p>
+      <p>
+        <strong>
+          This website doesn't make calls to external APIs. Don't trust
+          verify!</strong
+        >
+      </p>
+      <p>
+        If someone find the key I won't even bother to know it. So becareful out
+        there!
+      </p>
+    </div>
+  </body>
+</html>
