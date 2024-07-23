@@ -20,4 +20,5 @@ export default defineConfig({
     nodePolyfills({ globals: { Buffer: true } }),
     react(),
   ],
+  base: "/bitcoin-lottery",
 });

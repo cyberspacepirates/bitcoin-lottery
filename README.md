@@ -17,7 +17,8 @@ https://github.com/demining/Kangaroo-by-JeanLucPons
 Make sure you have Node.js and Rust Installed
 
 ```sh
-npm run run-build
+rm -rf ./src/wasm-bitcoin
+npm run rust-build
 npm install
 ```
 
