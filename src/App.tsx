@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import bitcoinLogo from "./assets/bitcoin.png";
 import { random32ByteRange, findPrivateKey, toWIF } from "./bitcoin";
 
@@ -97,7 +96,9 @@ function App() {
         possibilities is 36,893,488,147,419,103,231 keys.
         <strong>
           <br /> MUST READ:{" "}
-          <a href="/education.html">Kangaroos and What to do If I found it?</a>
+          <a href="/bitcoin-lottery/education.html">
+            Kangaroos and What to do If I found it?
+          </a>
         </strong>
       </p>
       {
