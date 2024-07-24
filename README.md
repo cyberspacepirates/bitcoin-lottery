@@ -1,10 +1,10 @@
 # Bitcoin Lottery
 
-This website tries 50K from the puzzle 66
+This website tries 50K keys from the puzzle 66
 
 The range is `20000000000000000` to `3ffffffffffffffff`.
 
-Even if someone finds the key is tough to redeem the funds because of Kangaroos!
+Even if someone finds the key It's tough to redeem the funds because of Kangaroos!
 https://github.com/demining/Kangaroo-by-JeanLucPons
 
 ## Requirements

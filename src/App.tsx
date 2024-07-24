@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import bitcoinLogo from "./assets/bitcoin.png";
 import { random32ByteRange, findPrivateKey, toWIF } from "./bitcoin";
+
+import englishContent from "./languages/english";
+import ptContent from "./languages/portuguese";
 
 let sideEffect = 0;
 
@@ -12,7 +15,35 @@ enum LotteryState {
 
 function App() {
   const [state, setState] = useState(LotteryState.Normal);
-  const [text, setText] = useState("I wish you good luck!");
+  const [content, setContentLanguage] = useState(englishContent);
+  const [text, setText] = useState(content["puzzle-state-initial"]);
+  useEffect(() => {
+    /**
+     * A stupid workaround that checks the url params to set the language used in the application.
+     */
+    const queryParams = new URLSearchParams(window.location.search);
+    let lang = queryParams.get("lang");
+
+    if (!lang) {
+      const userLang = navigator.language || "en";
+      if (RegExp("^pt").test(userLang)) {
+        lang = "pt";
+      } else {
+        lang = "en";
+      }
+    }
+
+    switch (lang) {
+      case "pt":
+      case "pt-br":
+        setContentLanguage(ptContent);
+        break;
+      default:
+        setContentLanguage(englishContent);
+        break;
+    }
+    setText(content["puzzle-state-initial"]);
+  }, [setContentLanguage, content, setText]);
 
   const playLottery = async () => {
     const rangeStart = "20000000000000000";
@@ -31,20 +62,35 @@ function App() {
       const wif =
         result.privateKey &&
         toWIF(result.privateKey.toString(16).padStart(64, "0"));
-      setText(
-        `This is the private key: ${result.privateKey}\n. This is the WIF: ${wif}`
-      );
+      result.privateKey &&
+        setText(
+          content["puzzle-state-sucess-content"](
+            result.privateKey.toString(16),
+            wif || ""
+          )
+        );
     } else {
       /**
        * The key WAS NOT found
        */
       setState(LotteryState.Normal);
-      setText(`shhh! No key found, start = ${start}, Keep trying!`);
+      setText(content["puzzle-state-not-found"](start));
     }
   };
 
   return (
     <>
+      <div
+        style={{
+          display: "flex",
+          gap: "15px",
+          justifyContent: "center",
+          fontSize: "14px",
+        }}
+      >
+        <a href="?lang=en">Read in English</a>
+        <a href="?lang=pt">Ler em Portugues</a>
+      </div>
       <div
         className="typewriter"
         style={{
@@ -53,7 +99,7 @@ function App() {
           justifyContent: "center",
         }}
       >
-        <h1>Bitcoin Lottery</h1>
+        <h1>{content.title}</h1>
         <img src={bitcoinLogo} width={100} />
       </div>
       <div className="card">
@@ -70,7 +116,7 @@ function App() {
               }, 10);
             }}
           >
-            Roll a ticket
+            {content["roll-btn"]}
           </button>
         )}
 
@@ -82,25 +128,18 @@ function App() {
 
         {state == LotteryState.Success && (
           <div>
-            <h1 className="success-title">YOU FOUND THE KEY!!!!</h1>
+            <h1 className="success-title">
+              {content["puzzle-state-success-title"]}
+            </h1>
           </div>
         )}
 
         <p>{text}</p>
       </div>
-      <p className="read-the-docs">
-        This is a lottery to solve a puzzle of this address:
-        <strong>13zb1hQbWVsc2S7ZTZnP2G4undNNpdh5so</strong>
-        <br></br>
-        It contains 6.6 BTC, each time you roll you try 50K keys, the
-        possibilities is 36,893,488,147,419,103,231 keys.
-        <strong>
-          <br /> MUST READ:{" "}
-          <a href="/bitcoin-lottery/education.html">
-            Kangaroos and What to do If I found it?
-          </a>
-        </strong>
-      </p>
+      <p
+        className="read-the-docs"
+        dangerouslySetInnerHTML={{ __html: content["puzzle-info"] }}
+      ></p>
       {
         /*The following code are the little bitcoins dropping in the screen*/
         [...new Array(window.innerWidth < 800 ? 4 : 10).keys()].map((i) => {
