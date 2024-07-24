@@ -33,18 +33,16 @@ function App() {
       }
     }
 
-    if (lang) {
-      switch (lang) {
-        case "pt":
-        case "pt-br":
-          setContentLanguage(ptContent);
-          break;
-        default:
-          setContentLanguage(englishContent);
-          break;
-      }
-      setText(content["puzzle-state-initial"]);
+    switch (lang) {
+      case "pt":
+      case "pt-br":
+        setContentLanguage(ptContent);
+        break;
+      default:
+        setContentLanguage(englishContent);
+        break;
     }
+    setText(content["puzzle-state-initial"]);
   }, [setContentLanguage, content, setText]);
 
   const playLottery = async () => {
