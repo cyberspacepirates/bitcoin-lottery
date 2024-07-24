@@ -11,6 +11,7 @@ export default defineConfig({
       input: {
         index: "./index.html",
         education: "./education.html",
+        educacao: "./education-pt.html",
       },
     },
   },
