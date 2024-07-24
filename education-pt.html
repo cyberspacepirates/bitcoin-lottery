@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favico.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="App.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script>
+      import "./src/App.css";
+      import "./src/index.css";
+    </script>
+    <title>Bitcoin Web Lottery - Aprenda sobre os desafios!</title>
+    <style>
+      p {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      style="text-align: start; min-width: 320px; max-width: 800px"
+    >
+      <h1 id="what-to-do-if-i-found-the-private-key">
+        O que fazer se eu achar a chave privada?
+      </h1>
+      <p>
+        Se voce achou a chava privada, parabens! To muito feliz que esse
+        estupido programa que eu fiz mudou a vida de alguem!<br /><br />Mas
+        recuperar esses Bitcoins do puzzle <strong>NÃO É</strong> tão simples
+        assim.
+      </p>
+      <p>Por que?</p>
+      <p>
+        Por causa dos <strong>KANGAROOS</strong>! Sim! Isso aqui
+        <strong>NÃO É</strong> uma brincadeira!
+      </p>
+      <p>
+        Se voce ler sobre os 160 puzzles, voce vai perceber que alguns puzzles
+        ja foram resolvido, puzzles mais difíceis do que o puzzle 66,
+      </p>
+      <p>
+        É por que eles usaram um algoritmo diferente para essa questao, o
+        Pollard Kanagaroo, por que a chave publica desses enderecos foram
+        expostas e eles sabiam o range da chave privada.
+      </p>
+      <h2 id="what-to-do">O que eu faco então?</h2>
+      <p>
+        Se voce fazer uma transação, voce vai expor a chave publica, entao um
+        monte de BOTS ouvindo a mempool vao tentar correr e mudar sua transação.
+      </p>
+      <p>
+        <strong
+          >NÃO ADIANTE SE VOCE DESABILITAR O RBF(Replace by Fee), eles ainda
+          conseguem roubar seus Bitcoins do puzzle.</strong
+        >
+      </p>
+      <h2 id="the-harder-choice">A escolha dificil</h2>
+      <p>
+        Não existe a escolha sem rico aqui - A escolha com menos riscos é
+        minerar seu proprio bloco e a adicionar a transação na blockchain. O
+        risco é se houver um Fork na Blockchian que acontece 2 vezes no mes.
+      </p>
+      <p>
+        Para mais informarções, leia esse artigo no Github:
+        <a href="https://github.com/demining/Kangaroo-by-JeanLucPons"
+          >Pollard’s kangaroo for SECP256k1 (Ingles)</a
+        >
+      </p>
+      <p>
+        <strong
+          >Obrigado e que Deus te abençõe! Eu espero que voce aprendeu algo novo
+          aqui!</strong
+        >
+        Use essa pagina, não para desperdicar tempo, mas para melhorar seu
+        conhecimento!
+      </p>
+      <p>Se quiser me fazer uma doação, eu aceito com Amor s2!</p>
+      <p>1LovegWGQC3hiUE2mTiWuAUfY3St9BNs9B</p>
+      <p>
+        Eu fiz esse programa com typescript usando React com Vite, Eu usei o
+        crate do bitcoin do rust para gerar o endereço p2pkh pela hex da chave
+        privada.
+      </p>
+      <p>
+        E muito obrigado o rapaz que vem crackendo keys e trazendo informações
+        para a comunidade brasileira a respeiro disso! (Eu vou mencionar ele
+        aqui se ele permitir)
+      </p>
+      <p>
+        <strong>
+          Esse site não faz requisições para sites externos! Não confie,
+          verifique!
+        </strong>
+      </p>
+      <p>
+        Se alguem achar a chave, eu não vou nem saber. Então tome muito cuidado!
+      </p>
+    </div>
+  </body>
+</html>
